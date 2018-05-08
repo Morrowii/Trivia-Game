@@ -17,12 +17,48 @@
     <title>Trivia Game</title>
   </head>
   <body>
-    <h1>Trivia Game</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col d-flex flex-column">
+          <h1 class="mx-auto">Trivia Game</h1>
+          <span class="mx-auto"><span>Time Remaining: </span><span id='quizTimer'></span></span>
+          <button id="start">Start</button>
+          <div id="image" class="mx-auto mt-3"><img src="" class></div>
+          <form class="mx-auto mt-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="option" id="option1" value="option1">
+              <label class="form-check-label" id="label1" for="option1">
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="option" id="option2" value="option2">
+              <label class="form-check-label" id="label2" for="option2">
+              </label>
+            </div>
+            <div class="form-check disabled">
+              <input class="form-check-input" type="radio" name="option" id="option3" value="option3">
+              <label class="form-check-label" id="label3" for="label3">
+              </label>
+            </div>
+            <div class="form-check disabled">
+              <input class="form-check-input" type="radio" name="option" id="option4" value="option4">
+              <label class="form-check-label" id="label4" for="label4">
+              </label>
+            </div>
+          </form>
+          <span id="message"></span>
+        </div>
+      </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/javascript/game.js"></script>
+
   </body>
 </html>
