@@ -1,4 +1,5 @@
-// To-Do: Annotate code, write README, add to portfolio, randomize questions + choices w/o repeating, add start + end pages, style!
+// To-Do: Annotate code, add to portfolio, randomize questions and choices without repeating,
+//        add end page, add styling, adjust timer and break between questions
 
 var questions = {
     
@@ -40,6 +41,9 @@ var labels = ['#label1', '#label2', '#label3', '#label4'];
 var intervalID;
 
 $('#start').on("click", function() {
+    setTimeout(function() { $('form').removeClass('invisible') }, 1000);
+    $('#timer-caption').removeClass('invisible');
+    $('#start').addClass('invisible');
     q = 0;
     correctAnswers = 0;
     incorrectAnswers = 0;
@@ -62,6 +66,8 @@ function timer() {
         q += 1;
         quizTimer = 11;
         setTimeout(function() { $('input').prop('checked', false) }, 1000);
+        setTimeout(function() { $('#message').text('') }, 1000);
+        setTimeout(function() { end() }, 1000);
     }
     else {
         quizTimer -= 1;
@@ -77,12 +83,16 @@ function checkAnswer() {
     }
     else if (answer !== questions[Object.keys(questions)[q]][0]) {
         incorrectAnswers += 1;
-        $('#message').text('Incorrect');
+        $('#message').text('Incorrect. ' + 'The answer is ' + questions[Object.keys(questions)[q]][0] + '.');
     }
 }
 
 function end() {
     if (q === images.length) {
         clearInterval(intervalID);
+        $('#start').removeClass('invisible');
+        $('form').addClass('invisible');
+        $('img').addClass('invisible');
+        $('#timer-caption').addClass('invisible');
     }
 }
